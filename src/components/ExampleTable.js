@@ -1,14 +1,20 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Example from "./Example";
 
 const ExampleTable = (props) => {
-    const [example, setExample] = useState(props.array);
-  return <div>
-      {example.map((elem, index)=><ul key={index}>
-          <li>{elem.first}</li>
-          <li>{elem.operator}</li>
-      </ul>)}
-  </div>;
+  const [example, setExample] = useState(props.array);
+  return (
+    <div>
+    <form>
+      {example.map((elem, index) => (
+        <ul key={index}>
+          <Example example={elem} />
+        </ul>
+      ))}
+      <button type="submit">Send result</button>
+      </form>
+    </div>
+  );
 };
 
 export default ExampleTable;

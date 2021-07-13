@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {evaluate} from "mathjs";
 import "./App.css";
 import Example from "./components/Example";
 import ExampleTable from "./components/ExampleTable";

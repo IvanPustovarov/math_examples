@@ -1,4 +1,5 @@
-import { column } from "mathjs";
+
+import {evaluate} from "mathjs";
 import React, { useState } from "react";
 
 const NUMBER = 100;
@@ -14,11 +15,18 @@ const createArguments = () => {
     let operators = ["+", "-", "*", "/"];
     let numberOperator = Math.floor(Math.random() * operators.length);
     let operator = operators[numberOperator];
+    let first = getRandomInt();
+    let second = getRandomInt();
+    let result = evaluate(`${first}${operator}${second}`);
+    if(operator === "/") {
+        result = result.toFixed(2);
+    }
 
     const example= {
-        first: getRandomInt(),
-        second: getRandomInt(),
-        operator
+        first,
+        second,
+        operator,
+        result
     }
     examples.push(example);
   }
