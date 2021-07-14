@@ -6,10 +6,6 @@ import ExampleTable from "./components/ExampleTable";
 import createArguments from "./components/api";
 
 function App() {
-
-  // useEffect(() => {
-  //   // createArguments();
-  // }, [])
   return (
     <div className="App">
       Math examples
