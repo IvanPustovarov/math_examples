@@ -1,6 +1,5 @@
 
 import {evaluate} from "mathjs";
-import React, { useState } from "react";
 
 const NUMBER = 100;
 
@@ -9,9 +8,6 @@ const getRandomInt = () => {
 };
 
 const createArguments = () => {
-  const examples = [];
-
-  for (let index = 0; index < 10; index++) {
     let operators = ["+", "-", "*", "/"];
     let numberOperator = Math.floor(Math.random() * operators.length);
     let operator = operators[numberOperator];
@@ -28,9 +24,7 @@ const createArguments = () => {
         operator,
         result
     }
-    examples.push(example);
-  }
-  return examples;
+  return example;
 };
 
 export default createArguments;
