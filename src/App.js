@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import ExampleTable from "./components/ExampleTable";
 
 function App() {
   return (
     <div className="App">
-      Math examples
+      <h1>Math examples</h1>
       <ExampleTable/>
     </div>
   );

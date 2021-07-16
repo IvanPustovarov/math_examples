@@ -18,12 +18,12 @@ const createExample = () => {
       second = getRandomInt(100);
     } else if (operator === '/') {
       second = getRandomInt(10)
-      first = getRandomInt(10) * second; 
+      first = getRandomInt(10) * second;
     } else if (operator === '*') {
       first = getRandomInt(10)
       second = getRandomInt(10)
     }
-    
+
     let result = evaluate(`${first}${operator}${second}`);
 
     const example= {

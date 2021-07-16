@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Example from "./Example";
 import createExample from "../api";
 import ResultMessage from "./ResultMessage";
+import Form from "./Form";
+import "../styles/exampleTable.css";
 
 const ExampleTable = () => {
   const EXAMPLES_COUNT = 10;
@@ -10,10 +12,13 @@ const ExampleTable = () => {
   const [results, setResults] = useState([]);
   const [correctCount, setCorrectCount] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [name, setName] = useState("");
 
   const renderResultMessage = () => {
     if (isSubmitted) {
-      return <ResultMessage result={correctCount} all={EXAMPLES_COUNT}/>;
+      return (
+        <ResultMessage result={correctCount} all={EXAMPLES_COUNT} name={name} />
+      );
     }
   };
 
@@ -41,6 +46,10 @@ const ExampleTable = () => {
     setResults(results);
   };
 
+  const handleNameChange = (name) => {
+    setName(name);
+  };
+
   useEffect(() => {
     const examples = [];
     const results = [];
@@ -48,9 +57,9 @@ const ExampleTable = () => {
     for (let index = 0; index < EXAMPLES_COUNT; index++) {
       examples.push(createExample());
       results.push({
-        answer: '',
-        isCorrect: false
-      })
+        answer: "",
+        isCorrect: false,
+      });
     }
     setExamples(examples);
     setResults(results);
@@ -59,6 +68,7 @@ const ExampleTable = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <Form handleNameChange={handleNameChange}/>
         {examples.map((elem, index) => (
           <Example
             example={elem}
@@ -69,7 +79,7 @@ const ExampleTable = () => {
             handleAnswerChange={handleAnswerChange}
           />
         ))}
-        <button type="submit" onSubmit={() => handleSubmit}>
+        <button type="submit" className="example_table_button" onSubmit={() => handleSubmit}>
           Send result
         </button>
         {renderResultMessage()}

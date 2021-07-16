@@ -1,7 +1,28 @@
+.example{
+    font-size: 2rem;
+}
+
+.example_input{
+    font-size: 1.5rem;
+    height: 2rem;
+    margin-bottom: .5rem;
+    border-radius: .2rem;
+    width: 4rem;
+}
+
+
 .true_result{
     background-color: green;
+    font-size: 1.5rem;
+    height: 2rem;
+    margin-bottom: .5rem;
+    border-radius: .2rem;
 }
 
 .false_result{
     background-color: red;
+    font-size: 1.5rem;
+    height: 2rem;
+    margin-bottom: .5rem;
+    border-radius: .2rem;
 }

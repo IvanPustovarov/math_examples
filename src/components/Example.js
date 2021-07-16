@@ -12,15 +12,15 @@ const Example = ({example, index, answer, handleAnswerChange, isCorrect, isSubmi
     if (isSubmitted) {
       return isCorrect ? 'true_result' : 'false_result'
     }
-    return ''
+    return 'example_input'
   }
 
   const formattedExample = () => {
     return `${example.first} ${example.operator} ${example.second} = `
-  } 
+  }
 
   return (
-    <div>
+    <div className="example">
       {formattedExample()}
       <input
         className={getClassName()}
