@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
-const Example = ({example}) => {
-  //const example = props.example;
+const Example = ({example, resultCount}) => {
   const [number, setNumber] = useState("");
 
   const handleChange = (event) => {
     const number = event.target.value;
     setNumber(parseInt(number, 10));
+    resultCount(number);
   };
+
+  resultCount = (answer) => answer;
 
   return (
     <div>

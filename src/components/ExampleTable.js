@@ -11,7 +11,10 @@ const ExampleTable = (props) => {
     }
   };
 
-  const handleSubmit = (event) => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("okya? okay!")
+  };
 
   const resultCount = (answer) => {};
 
@@ -24,9 +27,8 @@ const ExampleTable = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         {arrayExamples.map((elem, index) => (
-          <Example example={elem} key={index}/>
+          <Example example={elem} key={index} resultCount={resultCount}/>
         ))}
-        {console.log(arrayExamples)}
         <button type="submit" onSubmit={() => handleSubmit}>
           Send result
         </button>
