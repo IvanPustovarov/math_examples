@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
+import "../styles/example.css";
 
-const Example = ({example, resultCount}) => {
-  const [number, setNumber] = useState("");
+const Example = ({example, index, answer, handleAnswerChange, isCorrect, isSubmitted}) => {
 
   const handleChange = (event) => {
     const number = event.target.value;
-    setNumber(parseInt(number, 10));
-    resultCount(number);
+    handleAnswerChange(number, index);
   };
 
-  resultCount = (answer) => answer;
+  const getClassName = () => {
+    if (isSubmitted) {
+      return isCorrect ? 'true_result' : 'false_result'
+    }
+    return ''
+  }
+
+  const formattedExample = () => {
+    return `${example.first} ${example.operator} ${example.second} = `
+  } 
 
   return (
     <div>
-      {example.first} {example.operator} {example.second} ={" "}
+      {formattedExample()}
       <input
+        className={getClassName()}
         type="number"
-        value={number}
+        value={answer}
         onChange={handleChange}
         required="required"
       />
