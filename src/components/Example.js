@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Example = (props) => {
-  const example = props.example;
+const Example = ({example}) => {
+  //const example = props.example;
   const [number, setNumber] = useState("");
 
   const handleChange = (event) => {
@@ -10,7 +10,7 @@ const Example = (props) => {
   };
 
   return (
-    <>
+    <div>
       {example.first} {example.operator} {example.second} ={" "}
       <input
         type="number"
@@ -18,7 +18,7 @@ const Example = (props) => {
         onChange={handleChange}
         required="required"
       />
-    </>
+    </div>
   );
 };
 

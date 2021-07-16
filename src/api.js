@@ -7,7 +7,7 @@ const getRandomInt = () => {
   return Math.floor(Math.random() * NUMBER + 1);
 };
 
-const createArguments = () => {
+const createExample = () => {
     let operators = ["+", "-", "*", "/"];
     let numberOperator = Math.floor(Math.random() * operators.length);
     let operator = operators[numberOperator];
@@ -27,4 +27,4 @@ const createArguments = () => {
   return example;
 };
 
-export default createArguments;
+export default createExample;
