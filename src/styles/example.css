@@ -12,17 +12,21 @@
 
 
 .true_result{
-    background-color: green;
+    background-color: rgb(27, 106, 27);
+    color: white;
     font-size: 1.5rem;
     height: 2rem;
     margin-bottom: .5rem;
     border-radius: .2rem;
+    width: 4rem;
 }
 
 .false_result{
-    background-color: red;
+    background-color: rgb(180, 49, 49);
+    color: white;
     font-size: 1.5rem;
     height: 2rem;
     margin-bottom: .5rem;
     border-radius: .2rem;
+    width: 4rem;
 }

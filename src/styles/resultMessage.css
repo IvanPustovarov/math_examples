@@ -1,0 +1,34 @@
+.result{
+    margin-top: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.result_button {
+    margin-left: 1rem;
+    width: 15rem;
+    height: 2rem;
+    margin-top: .5rem;
+    font-size: 1.3rem;
+    animation: button-gradient 25s ease infinite;
+    background-image: -webkit-linear-gradient(
+      65deg,
+      #32879a,
+      #9464ab 50%,
+      #728393
+    );
+    background-image: linear-gradient(25deg, #fde021, #7fa1c5 50%, #017eff);
+    box-shadow: 0 3px 0 0 #5664a7;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.result_button:hover {
+    box-shadow: 0 2px 0 0 #5664a7;
+  }
+  
+  .result_button:active {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.05);
+  }
