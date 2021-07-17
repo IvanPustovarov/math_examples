@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/form.css"
 
-const Form = ({handleNameChange, name}) => {
+const Form = ({handleNameChange, name, isSubmitted}) => {
   const handleChange = (event) => {
     const name = event.target.value;
     handleNameChange(name);
@@ -14,6 +14,7 @@ const Form = ({handleNameChange, name}) => {
         type="text"
         className="form_input"
         value={name}
+        readOnly={isSubmitted}
         onChange={handleChange}
         required="required"
       />

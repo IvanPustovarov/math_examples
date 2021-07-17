@@ -27,6 +27,7 @@ const Example = ({example, index, answer, handleAnswerChange, isCorrect, isSubmi
         type="number"
         value={answer}
         onChange={handleChange}
+        readOnly={isSubmitted}
         required="required"
       />
     </div>

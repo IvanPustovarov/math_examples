@@ -17,7 +17,7 @@ const ExampleTable = () => {
   const renderResultMessage = () => {
     if (isSubmitted) {
       return (
-        <ResultMessage result={correctCount} all={EXAMPLES_COUNT} name={name} />
+        <ResultMessage result={correctCount} all={EXAMPLES_COUNT} name={name}/>
       );
     }
   };
@@ -68,7 +68,7 @@ const ExampleTable = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Form handleNameChange={handleNameChange}/>
+        <Form handleNameChange={handleNameChange} isSubmitted={isSubmitted}/>
         {examples.map((elem, index) => (
           <Example
             example={elem}
