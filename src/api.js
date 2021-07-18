@@ -43,17 +43,28 @@ const createExample = () => {
 const createMediumExample = () => {
   const numberOfTemplate = getRandomInt(4);
 
-  let first = 0;
-  let second = 0;
-  let third = 0;
-  let fourth = 0;
-  let result = 0;
+  let first,
+    second,
+    third,
+    fourth,
+    result = 0;
+  let firstOperator, secondOperator, thirdOperator;
+  let example = {
+    first,
+    second,
+    third,
+    fourth,
+    firstOperator,
+    secondOperator,
+    thirdOperator,
+    result,
+  };
 
   switch (numberOfTemplate) {
     case 1:
-      let firstOperator = getRandomOperator(2);
-      let secondOperator = getRandomOperator(4);
-      let thirdOperator = getRandomOperator(4);
+      firstOperator = getRandomOperator(2);
+      secondOperator = getRandomOperator(4);
+      thirdOperator = getRandomOperator(4);
 
       first = getRandomInt(100);
       second = getRandomInt(100);
@@ -112,7 +123,7 @@ const createMediumExample = () => {
       result = evaluate(
         `(${first}${firstOperator}${second})${secondOperator}${third}${thirdOperator}${fourth}`
       );
-      const example = {
+      example = {
         first,
         second,
         third,
@@ -125,11 +136,107 @@ const createMediumExample = () => {
 
       return example;
     case 2:
-      break;
+      firstOperator = getRandomOperator(4);
+      secondOperator = getRandomOperator(2);
+      thirdOperator = getRandomOperator(2);
+
+      second = getRandomInt(100);
+      third = getRandomInt(100);
+      fourth = getRandomInt(100);
+
+      if (firstOperator === "+" || secondOperator === "-") {
+        first = getRandomInt(100);
+      }
+
+      if (firstOperator === "*") {
+        first = getRandomInt(10);
+      }
+
+      if (firstOperator === "/") {
+        let secAndThird = evaluate(`${second}${secondOperator}${third}`);
+        first = getRandomInt(10) * secAndThird;
+      }
+
+      result = evaluate(
+        `${first}${firstOperator}(${second}${secondOperator}${third})${fourth}`
+      );
+
+      example = {
+        first,
+        second,
+        third,
+        fourth,
+        firstOperator,
+        secondOperator,
+        thirdOperator,
+        result,
+      };
+
+      return example;
     case 3:
-      break;
+      first = getRandomInt(100);
+      second = getRandomInt(100);
+
+      firstOperator = getRandomOperator(2);
+      secondOperator = getRandomOperator(4);
+
+      if(secondOperator === "+" || secondOperator === "-" ) {
+        third = getRandomInt(100);
+      }
+      if(secondOperator === "*") {
+        third = getRandomInt(10);
+      }
+      if(secondOperator === "/") {
+        let firstAndSec = evaluate(`${first}${firstOperator}${second}`);
+        third = getRandomInt(10) * firstAndSec;
+      }
+      result = evaluate(`(${first}${firstOperator}${second})${secondOperator}${third}`);
+      example = {
+        first,
+        second,
+        third,
+        fourth,
+        firstOperator,
+        secondOperator,
+        thirdOperator,
+        result,
+      };
+
+      return example;
     case 4:
-      break;
+      firstOperator = getRandomOperator(4);
+      secondOperator = getRandomOperator(2);
+      thirdOperator = getRandomOperator(2);
+
+      third = getRandomInt(100);
+      fourth = getRandomInt(100);
+
+      if(firstOperator === "+" || firstOperator === "-") {
+        first = getRandomInt(100);
+        second = getRandomInt(100);
+      }
+
+      if(firstOperator === "*") {
+          first = getRandomInt(10);
+          second = getRandomInt(100);
+      }
+      if(firstOperator === "/") {
+        first = getRandomInt(10) * second;
+        second = getRandomInt(10);
+      }
+
+      result = evaluate(`${first}${firstOperator}${second}${secondOperator}(${third}${thirdOperator}${fourth})`);
+      example = {
+        first,
+        second,
+        third,
+        fourth,
+        firstOperator,
+        secondOperator,
+        thirdOperator,
+        result,
+      };
+      return example;
 
     default:
       break;
