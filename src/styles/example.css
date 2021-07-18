@@ -1,32 +1,42 @@
-.example{
-    font-size: 2rem;
+.example {
+  font-size: 2rem;
+  display: flex;
+  width: 14rem;
 }
 
-.example_input{
-    font-size: 1.5rem;
-    height: 2rem;
-    margin-bottom: .5rem;
-    border-radius: .2rem;
-    width: 4rem;
+.example_arguments {
+    flex-grow: 1;
+}
+.example:nth-child(3n) {
+  page-break-after: always;
 }
 
-
-.true_result{
-    background-color: rgb(27, 106, 27);
-    color: white;
-    font-size: 1.5rem;
-    height: 2rem;
-    margin-bottom: .5rem;
-    border-radius: .2rem;
-    width: 4rem;
+.example_input {
+  font-size: 1.5rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  width: 4rem;
+  margin-left: 1rem;
+  justify-content: center;
 }
 
-.false_result{
-    background-color: rgb(180, 49, 49);
-    color: white;
-    font-size: 1.5rem;
-    height: 2rem;
-    margin-bottom: .5rem;
-    border-radius: .2rem;
-    width: 4rem;
+.true_result {
+  background-color: rgb(27, 106, 27);
+  color: white;
+  font-size: 1.5rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  width: 4rem;
+}
+
+.false_result {
+  background-color: rgb(180, 49, 49);
+  color: white;
+  font-size: 1.5rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  width: 4rem;
 }

@@ -67,7 +67,7 @@ const ExampleTable = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="example_table_form">
         <Form handleNameChange={handleNameChange} isSubmitted={isSubmitted}/>
         {examples.map((elem, index) => (
           <Example

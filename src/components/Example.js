@@ -16,7 +16,7 @@ const Example = ({example, index, answer, handleAnswerChange, isCorrect, isSubmi
   }
 
   const formattedExample = () => {
-    return `${example.first} ${example.operator} ${example.second} = `
+    return <div className="example_arguments">{example.first} {example.operator} {example.second} = </div>
   }
 
   return (
