@@ -3,9 +3,7 @@ import "../styles/resultMessage.css";
 
 const ResultMessage = ({ result, all, name }) => {
   const showResult = () => {
-    return `${
-      name ? name : `User`
-    }, your result: ${result}/${all}. Good job!`;
+    return <div className="result_text">{name ? name : `User`}, your result: {result}/{all}. Good job!</div>;
   };
   const refreshPage = () => {
     window.location.reload(false);
